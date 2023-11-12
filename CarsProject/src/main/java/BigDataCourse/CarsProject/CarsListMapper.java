@@ -39,7 +39,7 @@ public class CarsListMapper extends MapReduceBase
 	         if((filtersArr[0].equalsIgnoreCase(App.NO_FILTER) || brand.toLowerCase().contains(filtersArr[0])) 
 	         		&& (filtersArr[1].equalsIgnoreCase(App.NO_FILTER) || hp >= parseDouble(filtersArr[1], true)) 
 	         		&& (filtersArr[2].equalsIgnoreCase(App.NO_FILTER) || hp <= parseDouble(filtersArr[2], false))
-	         		&& (filtersArr[3].equalsIgnoreCase(App.NO_FILTER) || mpg >= parseDouble(filtersArr[3], true))) {
+	         		&& (filtersArr[3].equalsIgnoreCase(App.NO_FILTER) || mpg > parseDouble(filtersArr[3], true))) {
 	         	output.collect(new Text(brand), new Text(hp + "&" + mpg));
 	         }
 		}catch(NumberFormatException ex) {
@@ -54,7 +54,7 @@ public class CarsListMapper extends MapReduceBase
     		result = Double.parseDouble(num);
 			
 		}catch(NumberFormatException ex) {
-			System.err.println("Error in -> ." + num.toString() 
+			System.err.println("Error in -> " + num.toString() 
 			+ "\n" + ex.getMessage());
 			if(isMin) return -1;
 			else return Double.MAX_VALUE;

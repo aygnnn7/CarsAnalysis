@@ -66,7 +66,7 @@ public class App extends JFrame
         formPanel.add(tfCarByBrand);
 
         // label minimum horsepower
-        final JLabel lblMinHP = new JLabel("По конски сили от:");
+        final JLabel lblMinHP = new JLabel("По конски сили от(вкл.):");
         formPanel.add(lblMinHP);
         
         // text field minimum horsepower
@@ -74,7 +74,7 @@ public class App extends JFrame
         formPanel.add(tfMinHP);
         
         // label maximum horsepower
-        final JLabel lblMaxHP = new JLabel("По конски сили до:");
+        final JLabel lblMaxHP = new JLabel("По конски сили до(вкл.):");
         formPanel.add(lblMaxHP);
         
         // text field maximum horsepower
@@ -82,7 +82,7 @@ public class App extends JFrame
         formPanel.add(tfMaxHP);
         
         // label minimum MPG
-        final JLabel lblMinMPG = new JLabel("Среден разход от:");
+        final JLabel lblMinMPG = new JLabel("MPG от:");
         formPanel.add(lblMinMPG);
         
         // text field minimum MPG
@@ -171,7 +171,7 @@ public class App extends JFrame
 					if(!minHP.isEmpty()) filters += FILTER_SPLITTER + minHP;
 					else filters += FILTER_SPLITTER + NO_FILTER;
 					
-					if(!maxHP.isEmpty()) filters += FILTER_SPLITTER +maxHP;
+					if(!maxHP.isEmpty()) filters += FILTER_SPLITTER + maxHP;
 					else filters += FILTER_SPLITTER + NO_FILTER;
 					
 					if(!minMPG.isEmpty()) filters += FILTER_SPLITTER + minMPG;
